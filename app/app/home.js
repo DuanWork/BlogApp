@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { Button, SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native"
 
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
@@ -8,10 +9,12 @@ import {
   Popularjobs,
   ScreenHeaderBtn,
   Welcome,
+  Profilepage,
 } from "../components";
 
 const Home = () => {
-  const router = useRouter()
+  const navigation = useNavigation();
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -20,11 +23,11 @@ const Home = () => {
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-          headerLeft: () => (
+          headerRight: () => (
             <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
           ),
-          headerRight: () => (
-            <ScreenHeaderBtn iconUrl={images.profile} dimension='100%' />
+          headerLeft: () => (
+            <Button iconUrl={images.profile} dimension='100%' onPress={()=> navigation.navigate("Profile")} title="Profile" />
           ),
           headerTitle: "",
         }}

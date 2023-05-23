@@ -4,6 +4,8 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 import Welcome from "./home/welcome/Welcome";
 import Nearbyjobs from "./home/nearby/Nearbyjobs";
 import Popularjobs from "./home/popular/Popularjobs";
+import stackNavigator from "../utils/StackNavigator";
+import Profilepage from "./home/profile/profile";
 
 // job details screen
 import Company from "./jobdetails/company/Company";
@@ -14,10 +16,10 @@ import Specifics from "./jobdetails/specifics/Specifics";
 
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
-
 export {
   ScreenHeaderBtn,
   Welcome,
+  Profilepage,
   Nearbyjobs,
   Popularjobs,
   Company,
@@ -25,5 +27,6 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
+  stackNavigator
 };
